@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_yt/widgets/menu_widget.dart';
+import 'package:my_app_yt/widgets/user_profile/menu_widget.dart';
 import 'package:my_app_yt/models/menu_data.dart';
-import 'package:my_app_yt/widgets/my_navigation_bar.dart';
-import 'package:my_app_yt/widgets/user_info.dart';
+import 'package:my_app_yt/widgets/user_profile/nav_bar_widgets/my_navigation_bar.dart';
+import 'package:my_app_yt/widgets/user_profile/user_info_widgets/user_info.dart';
 
 class UserProfile extends StatelessWidget {
   final List<MenuRowData> menuData = [

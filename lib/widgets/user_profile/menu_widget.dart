@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_yt/widgets/menu_widget_row.dart';
+import 'package:my_app_yt/widgets/user_profile/menu_widget_row.dart';
 import 'package:my_app_yt/models/menu_data.dart';
 
 class MenuWidget extends StatelessWidget {
