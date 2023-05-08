@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MenuRowData {
   final IconData icon;
   final String text;
+  final Color color;
 
-  MenuRowData(this.icon, this.text);
+  MenuRowData(this.icon, this.text, this.color);
 }

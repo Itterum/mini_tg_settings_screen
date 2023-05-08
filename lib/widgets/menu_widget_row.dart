@@ -18,7 +18,7 @@ class MenuWidgetRow extends StatelessWidget {
         children: [
           Icon(
             data.icon,
-            color: Colors.white,
+            color: data.color,
           ),
           const SizedBox(width: 15),
           Expanded(
