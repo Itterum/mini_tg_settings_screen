@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:my_app_yt/models/menu_data.dart';
+import 'package:my_app_yt/models/notification_data.dart';
 
-class MenuWidgetRow extends StatelessWidget {
-  final MenuRowData data;
-
-  const MenuWidgetRow({Key? key, required this.data}) : super(key: key);
+class MessageNotificationsWidget extends StatelessWidget {
+  final NotificationRowData data;
+  const MessageNotificationsWidget({
+    super.key,
+    required this.data,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
-        vertical: 10,
+        vertical: 0,
       ),
       child: InkWell(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute<void>(
-              builder: (context) => data.screen,
-            ),
-          );
-        },
+        onTap: () {},
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -29,11 +24,16 @@ class MenuWidgetRow extends StatelessWidget {
               data.icon,
               color: data.color,
             ),
-            const SizedBox(width: 15),
             Expanded(
-              child: Text(
-                data.text,
-                style: const TextStyle(color: Colors.white),
+              child: ListTile(
+                title: Text(
+                  data.title,
+                  style: const TextStyle(color: Colors.white),
+                ),
+                subtitle: Text(
+                  data.subTitle,
+                  style: const TextStyle(color: Colors.grey),
+                ),
               ),
             ),
             Icon(

@@ -13,7 +13,6 @@ class UserInfo extends StatelessWidget {
       width: double.infinity,
       child: Column(
         children: const [
-          SizedBox(height: 50),
           AvatarWidget(),
           SizedBox(height: 20),
           UserNameWidget(),
