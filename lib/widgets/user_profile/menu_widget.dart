@@ -4,6 +4,7 @@ import 'package:my_app_yt/models/menu_data.dart';
 
 class MenuWidget extends StatelessWidget {
   final List<MenuRowData> menuData;
+  
   const MenuWidget({Key? key, required this.menuData}) : super(key: key);
 
   @override
