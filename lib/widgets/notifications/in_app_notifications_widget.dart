@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
-class InAppNotificationsWidget extends StatelessWidget {
+class InAppNotificationsWidget extends StatefulWidget {
   final String text;
+
   const InAppNotificationsWidget({
     super.key,
     required this.text,
   });
+
+  @override
+  State<InAppNotificationsWidget> createState() =>
+      _InAppNotificationsWidgetState();
+}
+
+class _InAppNotificationsWidgetState extends State<InAppNotificationsWidget> {
+  bool switchValue = true;
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +28,41 @@ class InAppNotificationsWidget extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              text,
+              widget.text,
               style: const TextStyle(color: Colors.white),
             ),
           ),
-          const Icon(
-            Icons.toggle_on,
-            color: Colors.green,
-            size: 42,
+          Switch(
+            value: switchValue,
+            onChanged: (bool newValue) {
+              setState(
+                () {
+                  switchValue = newValue;
+                },
+              );
+            },
+            activeColor: Colors.green,
+            inactiveTrackColor: Colors.grey,
+            activeTrackColor: Colors.green,
+            overlayColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                return switchValue
+                    ? Colors.green.withOpacity(0.2)
+                    : Colors.grey.withOpacity(0.2);
+              },
+            ),
+            thumbColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                return switchValue ? Colors.green : Colors.grey;
+              },
+            ),
+            trackColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                return switchValue
+                    ? Colors.green.withOpacity(0.5)
+                    : Colors.grey.withOpacity(0.5);
+              },
+            ),
           ),
         ],
       ),
