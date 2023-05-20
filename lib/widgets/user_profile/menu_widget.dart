@@ -4,7 +4,7 @@ import 'package:my_app_yt/models/menu_data.dart';
 
 class MenuWidget extends StatelessWidget {
   final List<MenuRowData> menuData;
-  
+
   const MenuWidget({Key? key, required this.menuData}) : super(key: key);
 
   @override
@@ -20,7 +20,22 @@ class MenuWidget extends StatelessWidget {
           ),
         ),
         child: Column(
-          children: menuData.map((data) => MenuWidgetRow(data: data)).toList(),
+          children: menuData.asMap().entries.map((entry) {
+            final index = entry.key;
+            final data = entry.value;
+            final isLastItem = index == menuData.length - 1;
+            return Column(
+              children: [
+                MenuWidgetRow(data: data),
+                if (!isLastItem)
+                  Container(
+                    height: 1,
+                    margin: const EdgeInsets.only(left: 55),
+                    color: Colors.grey.shade600,
+                  ),
+              ],
+            );
+          }).toList(),
         ),
       ),
     );

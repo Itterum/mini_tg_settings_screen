@@ -54,11 +54,22 @@ class NotificationsScreen extends StatelessWidget {
             Container(
               decoration: containerStyle,
               child: Column(
-                children: listData
-                    .map((data) => MessageNotificationsWidget(
-                          data: data,
-                        ))
-                    .toList(),
+                children: listData.asMap().entries.map((entry) {
+                  final index = entry.key;
+                  final data = entry.value;
+                  final isLastItem = index == listData.length - 1;
+                  return Column(
+                    children: [
+                      MessageNotificationsWidget(data: data),
+                      if (!isLastItem)
+                        Container(
+                          height: 1,
+                          margin: const EdgeInsets.only(left: 55),
+                          color: Colors.grey.shade600,
+                        ),
+                    ],
+                  );
+                }).toList(),
               ),
             ),
             const SizedBox(
@@ -68,10 +79,20 @@ class NotificationsScreen extends StatelessWidget {
             Container(
               decoration: containerStyle,
               child: Column(
-                children: const [
-                  InAppNotificationsWidget(text: 'In-App Sounds'),
-                  InAppNotificationsWidget(text: 'In-App Vibrate'),
-                  InAppNotificationsWidget(text: 'In-App Preview'),
+                children: [
+                  const InAppNotificationsWidget(text: 'In-App Sounds'),
+                  Container(
+                    height: 1,
+                    margin: const EdgeInsets.only(left: 15),
+                    color: Colors.grey.shade600,
+                  ),
+                  const InAppNotificationsWidget(text: 'In-App Vibrate'),
+                  Container(
+                    height: 1,
+                    margin: const EdgeInsets.only(left: 15),
+                    color: Colors.grey.shade600,
+                  ),
+                  const InAppNotificationsWidget(text: 'In-App Preview'),
                 ],
               ),
             ),
@@ -97,9 +118,14 @@ class NotificationsScreen extends StatelessWidget {
             Container(
               decoration: containerStyle,
               child: Column(
-                children: const [
-                  InAppNotificationsWidget(text: 'Include Channels'),
-                  InAppNotificationsWidget(text: 'Count Unread Messages'),
+                children: [
+                  const InAppNotificationsWidget(text: 'Include Channels'),
+                  Container(
+                    height: 1,
+                    margin: const EdgeInsets.only(left: 15),
+                    color: Colors.grey.shade600,
+                  ),
+                  const InAppNotificationsWidget(text: 'Count Unread Messages'),
                 ],
               ),
             ),
