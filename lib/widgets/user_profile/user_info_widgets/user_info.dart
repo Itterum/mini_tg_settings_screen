@@ -9,10 +9,10 @@ class UserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: double.infinity,
       child: Column(
-        children: const [
+        children: [
           AvatarWidget(),
           SizedBox(height: 20),
           UserNameWidget(),
@@ -31,9 +31,9 @@ class PhoneAndNickNameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         UserPhoneWidget(),
         SizedBox(width: 10),
         Text(

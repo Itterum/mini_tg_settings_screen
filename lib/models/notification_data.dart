@@ -7,5 +7,6 @@ class NotificationRowData {
   final Color color;
   final Widget screen;
 
-  NotificationRowData(this.icon, this.title, this.subTitle, this.color, this.screen, );
+  const NotificationRowData(
+      this.icon, this.title, this.subTitle, this.color, this.screen);
 }

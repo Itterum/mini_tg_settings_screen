@@ -7,12 +7,12 @@ import 'package:my_app_yt/widgets/notifications/message_notifications_widget.dar
 
 class NotificationsScreen extends StatelessWidget {
   final List<NotificationRowData> listData = [
-    NotificationRowData(Icons.person, 'Private Chats', '3 exceptions',
-        Colors.blue, const Placeholder()),
-    NotificationRowData(Icons.groups, 'Group Chats', '5 exceptions',
-        Colors.green, const Placeholder()),
-    NotificationRowData(Icons.speaker_group, 'Channels', '51 exceptions',
-        Colors.orange, const Placeholder()),
+    const NotificationRowData(Icons.person, 'Private Chats', '3 exceptions',
+        Colors.blue, Placeholder()),
+    const NotificationRowData(Icons.groups, 'Group Chats', '5 exceptions',
+        Colors.green, Placeholder()),
+    const NotificationRowData(Icons.speaker_group, 'Channels', '51 exceptions',
+        Colors.orange, Placeholder()),
   ];
 
   NotificationsScreen({Key? key}) : super(key: key);
@@ -101,8 +101,8 @@ class NotificationsScreen extends StatelessWidget {
             ),
             Container(
               decoration: containerStyle,
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   InAppNotificationsWidget(text: 'Names on Lock Screen'),
                 ],
               ),
@@ -137,8 +137,8 @@ class NotificationsScreen extends StatelessWidget {
             ),
             Container(
               decoration: containerStyle,
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   InAppNotificationsWidget(text: 'New Contacts'),
                 ],
               ),
