@@ -126,6 +126,7 @@ class UserProfile extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.grey.shade800,
         child: MyNavigationBar(
           navBarItems: navBarData,
         ),

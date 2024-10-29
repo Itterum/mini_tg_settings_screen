@@ -44,20 +44,20 @@ class _InAppNotificationsWidgetState extends State<InAppNotificationsWidget> {
             activeColor: Colors.green,
             inactiveTrackColor: Colors.grey,
             activeTrackColor: Colors.green,
-            overlayColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
+            overlayColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
                 return switchValue
                     ? Colors.green.withOpacity(0.2)
                     : Colors.grey.withOpacity(0.2);
               },
             ),
-            thumbColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
+            thumbColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
                 return switchValue ? Colors.green : Colors.grey;
               },
             ),
-            trackColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
+            trackColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
                 return switchValue
                     ? Colors.green.withOpacity(0.5)
                     : Colors.grey.withOpacity(0.5);
